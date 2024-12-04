@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borrow Board</title>
+</head>
+<body>
+  <h1>Borrow a Board</h1>
+  <form id="borrow-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="matric">Matric Number:</label>
+    <input type="text" id="matric" name="matric" required><br><br>
+
+    <label for="board">Available Boards:</label>
+    <select id="board" name="board" required>
+      <option value="" disabled selected>Select a board</option>
+    </select><br><br>
+
+    <button type="submit" >Submit</button>
+    <p id="statusMessage"></p>
+  </form>
+
+  <script src="firebase.js" type="module"></script>
+  <script src="applyform.js" type="module"></script>
+</body>
+</html>

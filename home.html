@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Board Dashboard</title>
+  </head>
+  <body>
+    <h1>Lab Equipment Management System</h1>
+    <h2>Available Boards</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Serial Number</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="board-list"></tbody>
+    </table>
+
+    <button id="applyform">Apply Form</button>
+    <button id="logout">Logout</button>
+
+    <h2>Your borrow Boards</h2>
+    <table border="1" >
+      <thead>
+        <tr>
+          <th>Serial Number</th>
+          <th>Status</th>
+          <th>Borrow Date</th>
+          <th>Return</th>
+        </tr>
+      </thead>
+      <tbody id="user-borrow-list"></tbody>
+    </table>
+    <button id="return">Return</button>
+    <p id="statusMessage"></p>
+
+    <script src="firebase.js" type="module"></script>
+    <script src="home.js" type="module"></script>
+  </body>
+</html>
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    button {
+      margin: 5px;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .approve {
+      background-color: green;
+      color: white;
+    }
+    .reject {
+      background-color: red;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<h1>Lab Equipment Management System</h1>
+  <h2>Admin Dashboard</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Matric Number</th>
+        <th>Board ID</th>
+        <th>Status</th>
+        <th>Return</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="application-list">
+      <!-- Applications will be populated here -->
+    </tbody>
+  </table>
+  <button id="Logout">Logout</button>
+  <button id="Home">Home</button>
+  <p id="statusMessage"></p>
+
+  <script src="firebase.js" type="module"></script>
+  <script src="homeadmin.js" type="module"></script>
+</body>
+</html>
