@@ -26,7 +26,7 @@ registrationButton.addEventListener("click", async (e) => {
         statusMessage.style.color = "green";
 
         setTimeout(() => {
-            window.location.href = "/home.html";
+            window.location.href = "./home.html";
         }, 2000); // 2-second delay
     } 
 
@@ -47,5 +47,5 @@ registrationButton.addEventListener("click", async (e) => {
 });
 
 backButton.addEventListener("click", function(){
-    window.location.href = "/login.html";
+    window.location.href = "./login.html";
 })

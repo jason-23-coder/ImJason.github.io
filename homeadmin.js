@@ -168,14 +168,14 @@ onAuthStateChanged(auth, async(user) => {
             statusMessage.textContent = "Access denied. You are not an admin.";
             statusMessage.style.color = "green";
             setTimeout(() => {
-                window.location.href = "/home.html";
+                window.location.href = "./home.html";
             }, 2000);
         }
     }
     
     else {
         setTimeout(() => {
-            window.location.href = "/admin.html";
+            window.location.href = "./admin.html";
         }, 2000);
     }
 });
@@ -184,13 +184,13 @@ logoutButton.addEventListener("click", async () => {
     try {
       await signOut(auth);
       console.log("User logged out");
-      window.location.href = "login.html"; // Redirect to login page after logout
+      window.location.href = "./login.html"; // Redirect to login page after logout
     } catch (error) {
       console.error("Error logging out:", error);
     }
 });
 
 goToHome.addEventListener("click", function(){
-    window.location.href = "/home.html";
+    window.location.href = "./home.html";
 })
 

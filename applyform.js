@@ -77,7 +77,7 @@ form.addEventListener("submit", async (e) => {
     statusMessage.style.color = "green";
 
     setTimeout(() => {
-        window.location.href = "/home.html";
+        window.location.href = "./home.html";
     }, 2000);
 
     // Reload available boards
@@ -102,7 +102,7 @@ onAuthStateChanged(auth, (user) => {
       loadAvailableBoards();
     } else {
       // User is not logged in, redirect to the login page
-      window.location.href = "login.html"; // Replace with your login page URL
+      window.location.href = "./login.html"; // Replace with your login page URL
     }
   });
 

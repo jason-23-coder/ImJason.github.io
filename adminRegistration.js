@@ -32,7 +32,7 @@ adminregistrationbutton.addEventListener("click", async (e) => {
         statusMessage.style.color = "green";
 
         setTimeout(() => {
-            window.location.href = "/adminhome.html";
+            window.location.href = "./adminhome.html";
         }, 2000); // 2-second delay
     } 
 

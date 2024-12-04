@@ -35,7 +35,7 @@ loginButton.addEventListener("click", async (e) => {
 
         // Redirect to a protected page
         setTimeout(() => {
-            window.location.href = "/home.html";
+            window.location.href = "./home.html";
         }, 2000); // 2-second delay
     } 
     
@@ -53,15 +53,15 @@ loginButton.addEventListener("click", async (e) => {
         statusMessage.style.color = "red";
 
         setTimeout(() => {
-            window.location.href = "/Registration.html";
+            window.location.href = "./Registration.html";
         }, 2000); // 2-second delay
     }
 });
 
 goToAdminButton.addEventListener("click", function() {
-    window.location.href = "/admin.html";
+    window.location.href = "./admin.html";
 })
 
 registrationButton.addEventListener("click", function() {
-    window.location.href = "/Registration.html";
+    window.location.href = "./Registration.html";
 })

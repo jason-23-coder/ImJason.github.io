@@ -31,7 +31,7 @@ loginButton.addEventListener("click", async (e) => {
       statusMessage.style.color = "green";
 
       setTimeout(() => {
-        window.location.href = "/adminhome.html";
+        window.location.href = "./adminhome.html";
       }, 2000); 
     } 
     
@@ -40,7 +40,7 @@ loginButton.addEventListener("click", async (e) => {
       statusMessage.style.color = "red";
 
       setTimeout(() => {
-        window.location.href = "/home.html";
+        window.location.href = "./home.html";
       }, 2000); 
 
     }
@@ -52,6 +52,6 @@ loginButton.addEventListener("click", async (e) => {
 });
 
 backButton.addEventListener("click", function(){
-    window.location.href = "/login.html";
+    window.location.href = "./login.html";
 })
 
