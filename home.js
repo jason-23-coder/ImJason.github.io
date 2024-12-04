@@ -151,7 +151,7 @@ onAuthStateChanged(auth, (user) => {
     loadUserBorrowDetails(user.email)
   } else {
     // User is not logged in, redirect to the login page
-    window.location.href = "./login.html"; // Replace with your login page URL
+    window.location.href = "./index.html"; // Replace with your login page URL
   }
 });
 
@@ -159,7 +159,7 @@ logoutButton.addEventListener("click", async () => {
     try {
       await signOut(auth);
       console.log("User logged out");
-      window.location.href = "./login.html"; // Redirect to login page after logout
+      window.location.href = "./index.html"; // Redirect to login page after logout
     } catch (error) {
       console.error("Error logging out:", error);
     }

@@ -52,6 +52,6 @@ loginButton.addEventListener("click", async (e) => {
 });
 
 backButton.addEventListener("click", function(){
-    window.location.href = "./login.html";
+    window.location.href = "./index.html";
 })
 

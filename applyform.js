@@ -102,7 +102,7 @@ onAuthStateChanged(auth, (user) => {
       loadAvailableBoards();
     } else {
       // User is not logged in, redirect to the login page
-      window.location.href = "./login.html"; // Replace with your login page URL
+      window.location.href = "./index.html"; // Replace with your login page URL
     }
   });
 
