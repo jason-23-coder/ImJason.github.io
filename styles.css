@@ -1,54 +1,78 @@
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
-    background-image: url('https://cdn.pixabay.com/photo/2023/08/29/13/30/circuit-board-8221377_1280.png'); /* Replace with your image path */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
 }
 
+/* Container for centering content */
 .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px;
 }
 
-h1, h2 {
-    text-align: center;
-    margin-bottom: 20px;
+/* Headings */
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #e0f7fa;
 }
 
+/* Inputs */
 input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  color: #333;
 }
 
+/* Buttons */
 button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    margin-right: 10px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #007aff;
+  color: #fff;
+  transition: background 0.3s ease;
 }
 
+/* Button hover effect */
+button:hover {
+  background: #0051a8;
+}
+
+/* Button group layout */
+.button-group {
+  margin-top: 20px;
+}
+
+/* Login status */
 #login-status {
-    color: red;
-    text-align: center;
-    margin-top: 10px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #ffcccb;
 }
