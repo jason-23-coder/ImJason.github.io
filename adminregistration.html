@@ -1,16 +1,101 @@
-<html>
-  <head>
-    <title>Admin Register</title>
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Register</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url('https://images.pexels.com/photos/265072/pexels-photo-265072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+    }
+
+    /* Container for the registration form */
+    .container {
+      background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #007bff;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    input[type="email"], input[type="password"] {
+      font-size: 1.1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    #statusMessage {
+      margin-top: 20px;
+      color: red;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      button {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
     <h1>Admin Register</h1>
     <input type="email" id="registration-email" placeholder="Admin Email" required>
     <input type="password" id="registration-password" placeholder="Password" required>
-    <button id = "registration-button">Register</button> 
+    <button id="registration-button">Register</button>
     <p id="statusMessage"></p>
+  </div>
 
-
-    <script src="firebase.js" type="module"></script>
-    <script src="logadmin.js" type="module" ></script>
-  </body>
+  <script src="firebase.js" type="module"></script>
+  <script src="logadmin.js" type="module"></script>
+</body>
 </html>
