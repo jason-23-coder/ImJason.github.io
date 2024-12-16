@@ -1,4 +1,5 @@
 /* General body styling */
+/* General body styling */
 body {
   font-family: 'Arial', sans-serif;
   background: url('https://cdn.pixabay.com/photo/2023/08/29/13/30/circuit-board-8221377_1280.png') no-repeat center center/cover;
@@ -8,11 +9,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-attachment: fixed; /* Fixes the background when scrolling */
 }
 
 /* Container styling */
 .container {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95); /* Adds transparency to container */
   border-radius: 10px;
   padding: 30px 20px;
   text-align: center;
@@ -20,14 +22,6 @@ body {
   max-width: 400px;
   width: 100%;
   box-sizing: border-box;
-}
-
-/* Logo styling */
-.logo {
-  display: block;
-  margin: 0 auto 20px; /* Center logo with space below */
-  width: 80px; /* Adjust size as needed */
-  height: auto;
 }
 
 /* Title styling */
