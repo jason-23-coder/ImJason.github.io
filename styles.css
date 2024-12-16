@@ -1,5 +1,9 @@
 body {
     font-family: Arial, sans-serif;
+    background-image: url('https://pixabay.com/illustrations/circuit-board-chipset-conductors-8221377/'); /* Replace with your image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
