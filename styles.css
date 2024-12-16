@@ -1,7 +1,7 @@
 /* General body styling */
 body {
   font-family: 'Arial', sans-serif;
-  background: url('background.jpg') no-repeat center center/cover;
+  background: url('https://cdn.pixabay.com/photo/2023/08/29/13/30/circuit-board-8221377_1280.png') no-repeat center center/cover;
   margin: 0;
   padding: 0;
   display: flex;
