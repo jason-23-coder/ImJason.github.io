@@ -5,17 +5,26 @@
   </head>
   <body>
     <div class="container">
-      <h1>Lab Equipment Management System</h1>
+      <h1>
+        Lab Equipment <br>
+        Management System
+      </h1>
       <h2>Login</h2>
+
+      <!-- Email and password fields stacked vertically -->
       <input type="email" id="email" placeholder="Email" required>
       <input type="password" id="password" placeholder="Password" required>
+
+      <!-- Buttons with equal width -->
       <div class="button-group">
         <button id="login-button">Login</button>
         <button id="registration-button">Register</button>
         <button id="admin-button">Admin</button>
       </div>
+
       <p id="login-status"></p>
     </div>
+
     <script src="firebase.js" type="module"></script>
     <script src="Userlogin.js" type="module"></script>
   </body>
