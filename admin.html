@@ -1,16 +1,111 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
+    <style>
+      /* General body styling */
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: url('https://images.pexels.com/photos/4427430/pexels-photo-4427430.jpeg') no-repeat center center/cover;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333;
+      }
+
+      /* Main container styling */
+      .container {
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        max-width: 400px;
+        width: 90%;
+      }
+
+      /* Header styling */
+      h1 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+        color: #444;
+      }
+
+      /* Input styling */
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        box-sizing: border-box;
+        transition: border 0.3s ease;
+      }
+
+      input:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+
+      /* Buttons styling */
+      button {
+        width: 48%;
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+      }
+
+      #admin-login-button {
+        background: linear-gradient(45deg, #007bff, #0056b3);
+      }
+
+      #admin-login-button:hover {
+        background: linear-gradient(45deg, #0056b3, #003d82);
+        transform: translateY(-2px);
+      }
+
+      #back-button {
+        background: linear-gradient(45deg, #ff4b5c, #ff6b81);
+      }
+
+      #back-button:hover {
+        background: linear-gradient(45deg, #e2434f, #ff4f6e);
+        transform: translateY(-2px);
+      }
+
+      /* Status message styling */
+      #statusMessage {
+        margin-top: 15px;
+        font-size: 1rem;
+        color: #d9534f;
+      }
+    </style>
   </head>
   <body>
-    <h1>Admin Login</h1>
-    <input type="email" id="admin-email" placeholder="Admin Email" required>
-    <input type="password" id="admin-password" placeholder="Password" required>
+    <div class="container">
+      <h1>Admin Login</h1>
+      <input type="email" id="admin-email" placeholder="Admin Email" required>
+      <input type="password" id="admin-password" placeholder="Password" required>
+      
+      <div>
+        <button id="admin-login-button">Login</button>
+        <button id="back-button">Back</button>
+      </div>
+      <p id="statusMessage"></p>
+    </div>
 
-    <button id="admin-login-button">Login</button>
-    <button id="back-button">Back</button>
-    <p id = "statusMessage"></p>
-    
     <script src="firebase.js" type="module"></script>
     <script src="logadmin.js" type="module"></script>
   </body>
