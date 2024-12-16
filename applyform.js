@@ -68,9 +68,16 @@ form.addEventListener("submit", async (e) => {
         ID: boardId
     })
 
-    // Update the board status to unavailable
+    //Update borrower details
+    //const boardRef = doc(db, "board", boardId);
+    //await updateDoc(boardRef, { borrower : matric });
+
+    // Update the board status to unavailable and borrower details
     const boardRef = doc(db, "board", boardId);
-    await updateDoc(boardRef, { status: false });
+    await updateDoc(boardRef, {
+        status: false,   // Mark as unavailable
+        borrower: matric // Assign borrower
+    });
 
     // Show success message
     statusMessage.textContent = `Board borrowed successfully by ${name} (${matric}).`;
