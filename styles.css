@@ -1,20 +1,19 @@
 /* General body styling */
-/* General body styling */
 body {
   font-family: 'Arial', sans-serif;
-  background: url('https://cdn.pixabay.com/photo/2023/08/29/13/30/circuit-board-8221377_1280.png') no-repeat center center/cover;
+  background: url('background.jpg') no-repeat center center/cover;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-attachment: fixed; /* Fixes the background when scrolling */
+  background-attachment: fixed;
 }
 
 /* Container styling */
 .container {
-  background: rgba(255, 255, 255, 0.95); /* Adds transparency to container */
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
   padding: 30px 20px;
   text-align: center;
@@ -22,6 +21,14 @@ body {
   max-width: 400px;
   width: 100%;
   box-sizing: border-box;
+}
+
+/* Logo styling */
+.logo {
+  display: block;
+  margin: 0 auto 20px;
+  width: 80px; /* Adjust logo size */
+  height: auto;
 }
 
 /* Title styling */
@@ -48,20 +55,19 @@ input {
   border-radius: 5px;
   font-size: 1rem;
   box-sizing: border-box;
-  transition: border-color 0.3s ease;
 }
 
 input:focus {
   outline: none;
-  border-color: #007bff; /* Highlight on focus */
+  border-color: #007bff;
 }
 
-/* Admin button styling with custom color */
+/* Admin button styling */
 #admin-button {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
-  background-color: rgb(92, 0, 31); /* Custom color */
+  background-color: rgb(92, 0, 31); /* Custom admin color */
   border: none;
   border-radius: 5px;
   font-size: 1rem;
@@ -71,5 +77,74 @@ input:focus {
 }
 
 #admin-button:hover {
-  background-color: rgb(77, 0, 26); /* Slightly darker shade on hover */
-  transform:
+  background-color: rgb(77, 0, 26);
+  transform: translateY(-2px);
+}
+
+/* Login and Register buttons side by side */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 0; /* Remove gap to merge buttons' width */
+}
+
+button {
+  flex: 1; /* Buttons take equal space */
+  padding: 12px;
+  border: none;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Login button colorful styling */
+#login-button {
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#login-button:hover {
+  background: linear-gradient(45deg, #f77f89, #e39bb8, #e6a7d7);
+  transform: translateY(-2px);
+}
+
+/* Register button colorful styling */
+#registration-button {
+  background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#registration-button:hover {
+  background: linear-gradient(45deg, #7ab5f8, #9fd2e9);
+  transform: translateY(-2px);
+}
+
+/* Login status message */
+#login-status {
+  margin-top: 15px;
+  color: red;
+  font-size: 0.9rem;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  input, button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
