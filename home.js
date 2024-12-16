@@ -115,7 +115,10 @@ async function handleReturn() {
       try {
         // Update the board status to 'available' (true)
         const boardRef = doc(db, "board", boardId);
-        await updateDoc(boardRef, { status: true });
+        await updateDoc(boardRef, { 
+            status: true , 
+            borrower: ""
+        });
   
         // Update the borrow detail to indicate that the board has been returned
         const borrowRef = doc(db, "borrow_detail", borrowDetailId);
