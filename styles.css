@@ -1,7 +1,7 @@
-/* General styles */
+/* General body styling */
 body {
   font-family: 'Arial', sans-serif;
-  background: url('background.jpg') no-repeat center center/cover;
+  background: url('https://cdn.pixabay.com/photo/2023/08/29/13/30/circuit-board-8221377_1280.png') no-repeat center center/cover;
   margin: 0;
   padding: 0;
   display: flex;
@@ -19,6 +19,15 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   max-width: 400px;
   width: 100%;
+  box-sizing: border-box;
+}
+
+/* Logo styling */
+.logo {
+  display: block;
+  margin: 0 auto 20px; /* Center logo with space below */
+  width: 80px; /* Adjust size as needed */
+  height: auto;
 }
 
 /* Title styling */
@@ -36,68 +45,37 @@ h2 {
   color: #333;
 }
 
-/* Input fields */
+/* Input fields styling */
 input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
   box-sizing: border-box;
+  transition: border-color 0.3s ease;
 }
 
-/* Admin button below email */
+input:focus {
+  outline: none;
+  border-color: #007bff; /* Highlight on focus */
+}
+
+/* Admin button styling with custom color */
 #admin-button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
-  background-color: #17a2b8; /* Cyan */
+  background-color: rgb(92, 0, 31); /* Custom color */
   border: none;
   border-radius: 5px;
   font-size: 1rem;
   color: #fff;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 #admin-button:hover {
-  background-color: #138496;
-}
-
-/* Login and Register buttons side by side */
-.button-group {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-button {
-  flex: 1; /* Equal width buttons */
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-#login-button {
-  background-color: #28a745; /* Green */
-}
-
-#registration-button {
-  background-color: #007bff; /* Blue */
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
-/* Login status message */
-#login-status {
-  margin-top: 15px;
-  color: red;
-  font-size: 0.9rem;
-}
+  background-color: rgb(77, 0, 26); /* Slightly darker shade on hover */
+  transform:
