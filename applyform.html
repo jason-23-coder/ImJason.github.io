@@ -4,26 +4,113 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Borrow Board</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url('https://www.intel.com/content/dam/develop/public/us/en/images/hardware/terasic-de10-standard-kit-rwd.png') no-repeat center center/cover;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+    }
+
+    /* Container for the form */
+    .container {
+      background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 1rem;
+      margin: 8px 0;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    #statusMessage {
+      margin-top: 20px;
+      color: red;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      button {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Borrow a Board</h1>
-  <form id="borrow-form">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
 
-    <label for="matric">Matric Number:</label>
-    <input type="text" id="matric" name="matric" required><br><br>
+  <div class="container">
+    <h1>Borrow a Board</h1>
+    <form id="borrow-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br>
 
-    <label for="board">Available Boards:</label>
-    <select id="board" name="board" required>
-      <option value="" disabled selected>Select a board</option>
-    </select><br><br>
+      <label for="matric">Matric Number:</label>
+      <input type="text" id="matric" name="matric" required><br>
 
-    <button type="submit" >Submit</button>
-    <p id="statusMessage"></p>
-  </form>
+      <label for="board">Available Boards:</label>
+      <select id="board" name="board" required>
+        <option value="" disabled selected>Select a board</option>
+      </select><br>
+
+      <button type="submit">Submit</button>
+      <p id="statusMessage"></p>
+    </form>
+  </div>
 
   <script src="firebase.js" type="module"></script>
   <script src="applyform.js" type="module"></script>
+
 </body>
 </html>
