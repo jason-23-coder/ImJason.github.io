@@ -1,4 +1,4 @@
-/* General styles */
+/* General body styling */
 body {
   font-family: 'Arial', sans-serif;
   background: url('background.jpg') no-repeat center center/cover;
@@ -10,7 +10,7 @@ body {
   height: 100vh;
 }
 
-/* Container box styling */
+/* Container styling */
 .container {
   background: #fff;
   border-radius: 10px;
@@ -19,13 +19,27 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   max-width: 400px;
   width: 100%;
+  box-sizing: border-box;
+}
+
+/* Logo styling */
+.logo {
+  display: block;
+  margin: 0 auto 20px; /* Center logo with space below */
+  width: 80px; /* Adjust size as needed */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
 }
 
 /* Title styling */
 h1 {
   font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: #000;
   line-height: 1.2;
 }
@@ -36,43 +50,101 @@ h2 {
   color: #333;
 }
 
-/* Input fields */
+/* Input fields styling */
 input {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 12px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
   box-sizing: border-box;
+  transition: border-color 0.3s ease;
 }
 
-/* Buttons aligned together */
-.button-group {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 10px;
+input:focus {
+  outline: none;
+  border-color: #007bff; /* Highlight on focus */
 }
 
-button {
-  flex: 1; /* Equal button width */
-  padding: 10px;
+/* Admin button styling */
+#admin-button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #17a2b8; /* Cyan color */
   border: none;
   border-radius: 5px;
   font-size: 1rem;
   color: #fff;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#admin-button:hover {
+  background-color: #138496;
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Login and Register buttons side by side */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+button {
+  flex: 1; /* Equal width buttons */
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 #login-button {
   background-color: #28a745; /* Green */
 }
 
+#login-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
 #registration-button {
   background-color: #007bff; /* Blue */
 }
 
-#admin-button {
-  background-color: #17a2b
+#registration-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Login status message styling */
+#login-status {
+  margin-top: 15px;
+  color: red;
+  font-size: 0.9rem;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  input, button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
