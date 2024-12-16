@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     background-image: url('https://cdn.pixabay.com/photo/2023/08/29/13/30/circuit-board-8221377_1280.png'); /* Replace with your image path */
     background-size: cover;
+    opacity: 0.7; /* Adjust the opacity value as needed */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: #f0f0f0;
