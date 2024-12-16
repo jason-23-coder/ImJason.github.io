@@ -5,58 +5,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
   <style>
+    /* General body styling */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://blog.cavelab.dev/2019/01/electronics-lab/cover_hu13892272436711096190.webp') no-repeat center center/cover;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Blurred background effect */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: inherit;
+      filter: blur(10px);
+      z-index: -1;
+    }
+
+    /* Container styling */
+    .container {
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      max-width: 95%;
+      overflow-x: auto;
+      z-index: 1; /* Ensure the content is above the blurred background */
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    /* Table styling */
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
+
     th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: left;
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
     }
+
     th {
-      background-color: #f4f4f4;
+      background-color: #007bff;
+      color: #fff;
+      text-transform: uppercase;
     }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Button styling */
     button {
-      margin: 5px;
-      padding: 5px 10px;
+      padding: 10px 20px;
       border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin: 10px 5px;
       cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
+
     .approve {
-      background-color: green;
+      background-color: #28a745;
       color: white;
     }
+
     .reject {
-      background-color: red;
+      background-color: #dc3545;
       color: white;
+    }
+
+    #Logout, #Home {
+      background: linear-gradient(45deg, #007bff, #0056b3);
+      color: #fff;
+    }
+
+    #Logout:hover, #Home:hover, .approve:hover, .reject:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* Status message */
+    #statusMessage {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 1.1rem;
+      color: #d9534f;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      th, td {
+        padding: 8px;
+        font-size: 0.9rem;
+      }
+
+      button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
-<h1>Lab Equipment Management System</h1>
-  <h2>Admin Dashboard</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Matric Number</th>
-        <th>Board ID</th>
-        <th>Status</th>
-        <th>Return</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="application-list">
-      <!-- Applications will be populated here -->
-    </tbody>
-  </table>
-  <button id="Logout">Logout</button>
-  <button id="Home">Home</button>
-  <p id="statusMessage"></p>
+  <div class="container">
+    <h1>Lab Equipment Management System</h1>
+    <h2>Admin Dashboard</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Matric Number</th>
+          <th>Board ID</th>
+          <th>Status</th>
+          <th>Return</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="application-list">
+        <!-- Applications will be populated here -->
+      </tbody>
+    </table>
+
+    <div style="text-align: center;">
+      <button id="Home">Home</button>
+      <button id="Logout">Logout</button>
+    </div>
+
+    <p id="statusMessage"></p>
+  </div>
 
   <script src="firebase.js" type="module"></script>
   <script src="homeadmin.js" type="module"></script>
