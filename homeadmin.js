@@ -137,7 +137,7 @@ async function handleApproval(applicationId, status) {
       await updateDoc(applicationRef, { status });
 
 
-      if (status === "Approved") {
+      if (status == "Approved") {
       const boardId = applicationDoc.data().ID; // Assuming the application document has a boardId field
       if (boardId) {
         const boardRef = doc(db, "board", boardId);
