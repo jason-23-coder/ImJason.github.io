@@ -124,7 +124,6 @@ async function handleApproval(applicationId, status) {
     try {
       // Create a reference to the application document
       const applicationRef = doc(db, "borrow_detail", applicationId);
-      
   
       // Check if the document exists before updating
       const applicationDoc = await getDoc(applicationRef);
@@ -136,6 +135,29 @@ async function handleApproval(applicationId, status) {
   
       // Update the status field in the document
       await updateDoc(applicationRef, { status });
+
+
+      if (status === "approved") {
+      const boardId = applicationDoc.data().ID; // Assuming the application document has a boardId field
+      if (boardId) {
+        const boardRef = doc(db, "board", boardId);
+
+        // Check if the board document exists before updating
+        const boardDoc = await getDoc(boardRef);
+        if (!boardDoc.exists()) {
+          console.error("No such board document!");
+          alert("Error: Board not found.");
+          return;
+        }
+
+        // Update the waiting field in the board document
+        await updateDoc(boardRef, { waiting: true });
+        console.log(`Board ${boardId} updated with waiting: true.`);
+      } else {
+        console.error("No boardId associated with this application.");
+        alert("Error: No associated board found for this application.");
+      }
+    }
   
       alert(`Application ${status}!`);
       loadApplications(); // Reload the application list to reflect the changes
@@ -146,6 +168,7 @@ async function handleApproval(applicationId, status) {
       alert("An error occurred while updating the application.");
     }
   }
+
   
 
 
