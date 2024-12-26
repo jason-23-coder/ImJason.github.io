@@ -95,6 +95,7 @@ async function loadApplications() {
             handleApproval(applicationDoc.id, "Rejected");
             const boardRef = doc(db, "board", application.ID); 
             await updateDoc(boardRef, { status: true});
+            await updateDoc(boardRef, { approval: false});
             const applicationRef = doc(db, "borrow_detail", applicationDoc.id)
             await updateDoc(applicationRef, { return: true });
          
@@ -151,7 +152,7 @@ async function handleApproval(applicationId, status) {
         }
 
         // Update the waiting field in the board document
-        await updateDoc(boardRef, { waiting: true });
+        await updateDoc(boardRef, { approval: true });
         console.log(`Board ${boardId} updated with waiting: true.`);
       } else {
         console.error("No boardId associated with this application.");
