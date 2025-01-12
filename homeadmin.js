@@ -28,8 +28,12 @@ async function loadApplications() {
 
       //Expired Date
       const expireddateCell = document.createElement("td");
-      const expiredDate = new Date(application.expireddate.seconds * 1000); // Convert Firestore timestamp to JS Date
-      expiredCell.textContent = expiredDate.toLocaleDateString();
+      if (application.expireddate && application.expireddate.seconds) {
+        const expiredDate = new Date(application.expireddate.seconds * 1000); // Convert Firestore timestamp to JS Date
+        expireddateCell.textContent = expiredDate.toLocaleDateString(); // Set the formatted date text
+      } else {
+        expireddateCell.textContent = "N/A"; // Set a default value if expireddate is empty
+      }
       row.appendChild(expiredCell);
 
       // Name Cell
@@ -86,8 +90,12 @@ async function loadApplications() {
 
       //Return Date
       const returndateCell = document.createElement("td");
-      const returnDate = new Date(application.returndate.seconds * 1000); // Convert Firestore timestamp to JS Date
-      returndateCell.textContent = returnDate.toLocaleDateString();
+      if (application.returndate && application.returndate.seconds) {
+        const returnDate = new Date(application.expireddate.seconds * 1000); // Convert Firestore timestamp to JS Date
+        returndateCell.textContent = expiredDate.toLocaleDateString(); // Set the formatted date text
+      } else {
+        returndateCell.textContent = "N/A"; // Set a default value if expireddate is empty
+      }
       row.appendChild(returndateCell);
 
       // Action Cell
