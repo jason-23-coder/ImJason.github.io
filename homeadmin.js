@@ -85,6 +85,8 @@ async function loadApplications() {
       approveButton.className = "approve";
       approveButton.addEventListener("click", async() =>{
         handleApproval(applicationDoc.id, "Approved");
+        const applicationRef = doc(db, "borrow_detail", applicationDoc.id)
+        await updateDoc(applicationRef, { expireddate: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)});
       });
 
       const rejectButton = document.createElement("button");
