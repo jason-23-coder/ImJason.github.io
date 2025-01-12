@@ -78,6 +78,16 @@ async function loadUserBorrowDetails(userEmail) {
         dateCell.textContent = borrowDate.toLocaleDateString();
         row.appendChild(dateCell);
 
+        //Expired Date
+        const expireddateCell = document.createElement("td");
+        if (borrow.expireddate && borrow.expireddate.seconds) {
+          const expiredDate = new Date(application.expireddate.seconds * 1000); // Convert Firestore timestamp to JS Date
+          expireddateCell.textContent = expiredDate.toLocaleDateString(); // Set the formatted date text
+        } else {
+          expireddateCell.textContent = "N/A"; // Set a default value if expireddate is empty
+        }
+        row.appendChild(expireddateCell);
+
         // Checkbox to select for return
         const returnCell = document.createElement("td");
         const returnCheckbox = document.createElement("input");
