@@ -27,7 +27,7 @@ async function loadApplications() {
       row.appendChild(dateCell);
 
       //Expired Date
-      const dateCell = document.createElement("td");
+      const expireddateCell = document.createElement("td");
       const expiredDate = new Date(application.expireddate.seconds * 1000); // Convert Firestore timestamp to JS Date
       expiredCell.textContent = expiredDate.toLocaleDateString();
       row.appendChild(expiredCell);
@@ -85,7 +85,7 @@ async function loadApplications() {
       row.appendChild(returnCell);
 
       //Return Date
-      const dateCell = document.createElement("td");
+      const returndateCell = document.createElement("td");
       const returnDate = new Date(application.returndate.seconds * 1000); // Convert Firestore timestamp to JS Date
       returndateCell.textContent = returnDate.toLocaleDateString();
       row.appendChild(returndateCell);
