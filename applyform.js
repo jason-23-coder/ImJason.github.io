@@ -65,7 +65,6 @@ form.addEventListener("submit", async (e) => {
         status: "pending",
         return: false,
         timestamp: new Date(),
-        returntime: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
         ID: boardId
     })
 
