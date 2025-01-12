@@ -65,8 +65,8 @@ form.addEventListener("submit", async (e) => {
         status: "pending",
         return: false,
         timestamp: new Date(),
-        returntime: "",
-        expireddate: "",
+        returntime: "-",
+        expireddate: "-",
         ID: boardId
     })
 
