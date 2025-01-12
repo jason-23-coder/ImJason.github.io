@@ -26,6 +26,12 @@ async function loadApplications() {
       dateCell.textContent = borrowDate.toLocaleDateString();
       row.appendChild(dateCell);
 
+      //Expired Date
+      const dateCell = document.createElement("td");
+      const expiredDate = new Date(application.expireddate.seconds * 1000); // Convert Firestore timestamp to JS Date
+      expiredCell.textContent = expiredDate.toLocaleDateString();
+      row.appendChild(expiredCell);
+
       // Name Cell
       const nameCell = document.createElement("td");
       nameCell.textContent = application.name;
@@ -77,6 +83,12 @@ async function loadApplications() {
         returnCell.style.color = "white"; 
       }
       row.appendChild(returnCell);
+
+      //Return Date
+      const dateCell = document.createElement("td");
+      const returnDate = new Date(application.returndate.seconds * 1000); // Convert Firestore timestamp to JS Date
+      returndateCell.textContent = returnDate.toLocaleDateString();
+      row.appendChild(returndateCell);
 
       // Action Cell
       const actionCell = document.createElement("td");
