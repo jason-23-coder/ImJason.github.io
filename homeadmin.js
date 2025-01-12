@@ -27,14 +27,14 @@ async function loadApplications() {
       row.appendChild(dateCell);
 
       //Expired Date
-      // const expireddateCell = document.createElement("td");
-      // if (application.expireddate && application.expireddate.seconds) {
-      //   const expiredDate = new Date(application.expireddate.seconds * 1000); // Convert Firestore timestamp to JS Date
-      //   expireddateCell.textContent = expiredDate.toLocaleDateString(); // Set the formatted date text
-      // } else {
-      //   expireddateCell.textContent = "N/A"; // Set a default value if expireddate is empty
-      // }
-      // row.appendChild(expireddateCell);
+      const expireddateCell = document.createElement("td");
+      if (application.expireddate && application.expireddate.seconds) {
+        const expiredDate = new Date(application.expireddate.seconds * 1000); // Convert Firestore timestamp to JS Date
+        expireddateCell.textContent = expiredDate.toLocaleDateString(); // Set the formatted date text
+      } else {
+        expireddateCell.textContent = "N/A"; // Set a default value if expireddate is empty
+      }
+      row.appendChild(expireddateCell);
 
       // Name Cell
       const nameCell = document.createElement("td");
@@ -88,15 +88,15 @@ async function loadApplications() {
       }
       row.appendChild(returnCell);
 
-      // //Return Date
-      // const returndateCell = document.createElement("td");
-      // if (application.returndate && application.returndate.seconds) {
-      //   const returnDate = new Date(application.expireddate.seconds * 1000); // Convert Firestore timestamp to JS Date
-      //   returndateCell.textContent = returnDate.toLocaleDateString(); // Set the formatted date text
-      // } else {
-      //   returndateCell.textContent = "N/A"; // Set a default value if expireddate is empty
-      // }
-      // row.appendChild(returndateCell);
+      //Return Date
+      const returndateCell = document.createElement("td");
+      if (application.returndate && application.returndate.seconds) {
+        const returnDate = new Date(application.expireddate.seconds * 1000); // Convert Firestore timestamp to JS Date
+        returndateCell.textContent = returnDate.toLocaleDateString(); // Set the formatted date text
+      } else {
+        returndateCell.textContent = "N/A"; // Set a default value if expireddate is empty
+      }
+      row.appendChild(returndateCell);
 
       // Action Cell
       const actionCell = document.createElement("td");
