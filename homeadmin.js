@@ -91,7 +91,7 @@ async function loadApplications() {
       //Return Date
       const returndateCell = document.createElement("td");
       if (application.returndate && application.returndate.seconds) {
-        const returnDate = new Date(application.expireddate.seconds * 1000); // Convert Firestore timestamp to JS Date
+        const returnDate = new Date(application.returndate.seconds * 1000); // Convert Firestore timestamp to JS Date
         returndateCell.textContent = returnDate.toLocaleDateString(); // Set the formatted date text
       } else {
         returndateCell.textContent = "N/A"; // Set a default value if expireddate is empty
