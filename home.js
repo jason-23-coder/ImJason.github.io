@@ -123,7 +123,7 @@ async function handleReturn() {
   
         // Update the borrow detail to indicate that the board has been returned
         const borrowRef = doc(db, "borrow_detail", borrowDetailId);
-        await updateDoc(borrowRef, { return: true });
+        await updateDoc(borrowRef, { return: true, returndate: new Date() });
   
         console.log("Board returned successfully");
 
